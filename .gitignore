@@ -1,0 +1,6 @@
+grafana/
+influx/
+arduino/secrets.h
+arduino/params.h
+
+config.json
