@@ -44,7 +44,7 @@ services:
     container_name: cloudflared
     restart: unless-stopped
     environment:
-      - TUNNEL_TOKEN= eyJhIjoiNDhkNmMwYjk5MzY1MzVkMmNkMjIwOTk0MTAxZmMwNjQiLCJ0IjoiNGI4OGM2OTQtY2YxNC00Mjg0LWIwZDYtMDhlMDA0YmUwNjlhIiwicyI6Ik5UQmpObVpqWmpJdE9XVTJNUzAwWlRjMExXRTNObU10TWpWallqYzNObUUyTnpaayJ9
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
     command: tunnel --no-autoupdate run
     network: bridge
 
