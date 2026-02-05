@@ -28,6 +28,7 @@ services:
   influx-ui:
     container_name: ui
     image: influxdata/influxdb3-ui:1.4.0
+    restart: unless-stopped
 
   nginx:
     image: nginx:1.28-alpine-slim
@@ -37,3 +38,13 @@ services:
       - 80:80
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    restart: unless-stopped
+    environment:
+      - TUNNEL_TOKEN= eyJhIjoiNDhkNmMwYjk5MzY1MzVkMmNkMjIwOTk0MTAxZmMwNjQiLCJ0IjoiNGI4OGM2OTQtY2YxNC00Mjg0LWIwZDYtMDhlMDA0YmUwNjlhIiwicyI6Ik5UQmpObVpqWmpJdE9XVTJNUzAwWlRjMExXRTNObU10TWpWallqYzNObUUyTnpaayJ9
+    command: tunnel --no-autoupdate run
+    network: bridge
+
