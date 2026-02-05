@@ -13,3 +13,6 @@ update:
 
 new-location LOCATION:
     cd arduino/ && sed "s/\$lkjhasf/{{LOCATION}}/" params_template.h > params.h
+
+exec *ARGS:
+    docker compose exec -it {{ARGS}}
