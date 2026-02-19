@@ -2,7 +2,7 @@
  * Fetches CSV data from the endpoint and updates the DOM.
  */
 function updateTemperature() {
-    const endpoint = 'http://blog.local/proxy/influxdb/freezer';
+    const endpoint = 'http://blog.farmarfamily.com/proxy/influxdb/freezer';
     const elements = document.getElementsByClassName('freezer-temperature');
 
     // Start the fetch request
