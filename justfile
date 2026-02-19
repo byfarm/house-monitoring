@@ -16,3 +16,7 @@ new-location LOCATION:
 
 exec *ARGS:
     docker compose exec -it {{ARGS}}
+
+serial:
+    stty -F /dev/ttyUSB0 raw 9600
+    cat /dev/ttyUSB0

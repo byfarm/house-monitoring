@@ -72,6 +72,10 @@ void loop() {
     int httpResponseCode = http.POST(buf);
     http.end();
 
+    char status[128];
+    snprintf(status, sizeof(status), "\nResponse code %d recieved from server", httpResponseCode);
+    Serial.print(status);
+
     // print to serial
     Serial.print(F("\nHumidity: "));
     Serial.print(humidity);
